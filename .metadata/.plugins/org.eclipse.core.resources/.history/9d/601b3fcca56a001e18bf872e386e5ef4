@@ -1,0 +1,71 @@
+package lab2example3;
+
+public class Board {
+
+	public static void main(String[] args) throws InterruptedException {
+	    for (int i = 1; i < 9; i++) {
+	        for (int j = 1; j < 9; j++) {
+	            Piece.board[i][j] = new Info();
+	        }
+	    }
+		Rock r1=new Rock(1,1);
+		Rock r2=new Rock(8,1);
+		RedRock rr1=new RedRock(1,8);
+		RedRock rr2=new RedRock(8,8);
+		King ki1=new King(5,1);
+		RedKing rki1=new RedKing(5,8);
+		Queen q1=new Queen(4,1);
+		RedQueen rq1=new RedQueen(4,8);
+		Bishop b1=new Bishop(3,1);
+		Bishop b2=new Bishop(6,1);
+		RedBishop rb1=new RedBishop(3,8);
+		RedBishop rb2=new RedBishop(6,8);
+		Knight kn1=new Knight(2,1);
+		Knight kn2=new Knight(7,1);
+		RedKnight rkn1=new RedKnight(2,8);
+		RedKnight rkn2=new RedKnight(7,8);
+		Pawn p1=new Pawn(1,2);
+		Pawn p2=new Pawn(2,2);
+		Pawn p3=new Pawn(3,2);
+		Pawn p4=new Pawn(4,2);
+		Pawn p5=new Pawn(5,2);
+		Pawn p6=new Pawn(6,2);
+		Pawn p7=new Pawn(7,2);
+		Pawn p8=new Pawn(8,2);
+		RedPawn rp1=new RedPawn(1,7);
+		RedPawn rp2=new RedPawn(2,7);
+		RedPawn rp3=new RedPawn(3,7);
+		RedPawn rp4=new RedPawn(4,7);
+		RedPawn rp5=new RedPawn(5,7);
+		RedPawn rp6=new RedPawn(6,7);
+		RedPawn rp7=new RedPawn(7,7);
+		RedPawn rp8=new RedPawn(8,7);
+		p4.move(4,4);
+		p4.move(4,5);
+		p4.move(4,6);
+		p4.move(5, 7);
+		while(Piece.board[ki1.x][ki1.y].value==1 && Piece.board[rki1.x][rki1.y].value==2) {
+			
+			for(int i=1;i<9;i++) {
+				for(int j=8;j>0;j--) {
+					Thread.sleep(1);
+					if(Piece.board[j][i].value==1) {
+		            	System.out.print(Piece.board[j][i].name);
+		    			Thread.sleep(1);
+					}else if(Piece.board[j][i].value==2){
+						System.err.print(Piece.board[j][i].name);
+						Thread.sleep(1);
+					}else {
+		            	System.out.print("    ");            
+					}
+	            	System.out.print("||");            
+				}
+	        	System.out.println();            
+				System.out.print("________________________________________________");
+	        	System.out.println();  
+	
+			}
+	    }
+	}
+
+}

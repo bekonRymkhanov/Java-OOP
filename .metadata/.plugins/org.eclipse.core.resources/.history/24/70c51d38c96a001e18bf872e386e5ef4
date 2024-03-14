@@ -1,0 +1,28 @@
+package lab2example3;
+
+public class King extends Piece{
+	
+	public King(int x,int y) {
+		super("king",x,y);
+	}
+	
+	boolean isLegalMove(int a, int b) {
+		if((Math.abs(a-this.x)>1 || Math.abs(b-this.y)>1) || (this.x==a && this.y==b) || (a<1 || b<1) || (a>8 || b>8)) return false;
+		if(board[a][b].value==1) return false;
+		return true;
+	}
+
+	void move(int a, int b) {
+		if(isLegalMove(a,b)) {
+			board[this.x][this.y].value=0;
+			board[a][b].value=1;
+			board[this.x][this.y].name="";
+			board[a][b].name="King";
+			this.x=a;
+			this.y=b;
+		}else {
+			System.out.print("Hey!");
+		}
+	}
+
+}

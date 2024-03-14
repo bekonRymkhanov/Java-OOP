@@ -1,0 +1,5 @@
+package lab2;
+
+public enum color {
+	red,black,white
+}

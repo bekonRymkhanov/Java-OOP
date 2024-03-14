@@ -1,0 +1,11 @@
+package lab1;
+
+public class lab13 {
+
+	public static void main(String[] args) {
+		Temperature t=new Temperature();
+		t.setBoth(100,'C');
+		System.out.print(t.returnFaren());
+	}
+
+}

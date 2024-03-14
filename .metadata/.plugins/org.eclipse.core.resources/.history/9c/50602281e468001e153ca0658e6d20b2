@@ -1,0 +1,34 @@
+package lab2;
+
+public abstract class Shapes {
+	char a;
+	protected color col;
+	protected int position;
+	
+	public Shapes() {
+		this.a = '*';
+		this.position=0;
+		this.col=color.WHITE;
+	}
+	
+	public Shapes(char a) {
+		this.position=0;
+		this.col=color.WHITE;
+		this.a = a;
+	}
+	abstract void setlenthes(int lenth);
+    abstract void draw();
+	public char getA() {
+		return this.a;
+	}
+	
+	public void setA(char a) {
+		this.a = a;
+	}
+	
+	public String toString() {
+		return "\nTHIS IS ";
+	}
+	
+}
+

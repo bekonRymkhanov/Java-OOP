@@ -1,0 +1,14 @@
+package lab2;
+
+public class test {
+
+	public static void main(String[] args) {
+		Circle c=new Circle(5);
+		c.draw();
+		Triangle t=new Triangle();
+		t.draw();
+		
+				
+	}
+
+}

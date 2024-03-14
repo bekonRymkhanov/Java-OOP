@@ -1,0 +1,26 @@
+package lab2;
+
+public class Rectangle extends Shapes{
+	private int high;
+	
+	
+	
+	void setlenthes(int lenth) {
+		this.high=lenth;
+	}
+
+	void draw() {
+		for(int i = 0; i < this.high; i++) {
+			for(int j = 0; j < this.high; j++) {
+				if(i == 0 || j == 0 || j == this.high - 1 || i == this.high  - 1 ) {
+					System.out.print(this.a);
+				}else {
+					System.out.print(" ");
+				}
+				
+			}
+			System.out.println();
+		}		
+	}
+
+}

@@ -1,0 +1,75 @@
+package lab2example3;
+
+public class Queen extends Piece{
+	public Queen(int x,int y) {
+		super("Quee",x,y);
+	}
+	@Override
+	boolean isLegalMove(int a, int b) {
+		if((a>8 || b>8) || (a<1 || b<1) || (this.x==a && this.y==b)) return false;
+		if(a==this.x) {
+			if(b>this.y) {
+				for(int i=this.y+1;i<=b;i++) {
+					if(board[a][i].value==1  ||( board[a][i].value==2 && b!=i)) {
+						return false;
+					}
+				}return true;
+			}else {
+				for(int i=b;i<this.y;i++) {
+					if(board[a][i].value==1 || ( board[a][i].value==2 && b!=i)) {
+						return false;
+					}
+				}return true;
+			}
+		}else if(b==this.y){
+			if(a>this.x) {
+				for(int i=this.x+1;i<=a;i++) {
+					if(board[i][b].value==1  || ( board[i][b].value==2 && a!=i)) {
+						return false;
+					}
+				}return true;
+			}else {
+				for(int i=a;i<this.x;i++) {
+					if(board[i][b].value==1 || ( board[i][b].value==2 && a!=i)) {
+						return false;
+					}
+				}return true;
+			}
+		}else if((this.x-a)==(this.y-b)) {
+			if(this.x-a<0) {
+				for(int i=1;i<=(a-this.x);i++) {
+					if(board[this.x+i][this.y+i].value==1 || ( board[this.x+i][this.y+i].value==2 && a!=this.x+i)) return false;
+				}return true;
+			}else {
+				for(int i=0;i<(this.x-a);i++) {
+					if(board[a+i][b+i].value==1 || ( board[a+i][b+i].value==2 && a!=this.x-i)) return false;
+				}return true;
+			}
+		}else if((this.x-a)*-1==(this.y-b)) {
+			if(this.x-a>0) {
+				for(int i=1;i<=this.x-a;i++) {
+					if(board[this.x-i][this.y+i].value==1) return false;
+				}return true;
+			}else {
+				for(int i=1;i<=a-this.x;i++) {
+					if(board[this.x+i][this.y-i].value==1) return false;
+				}return true;
+			}
+		}
+		return false;
+	}
+
+	void move(int a, int b) {
+		if(isLegalMove(a,b)) {
+			board[this.x][this.y].value=0;
+			board[a][b].value=1;
+			board[this.x][this.y].name="";
+			board[a][b].name="Quee";
+			this.x=a;
+			this.y=b;
+		}else {
+			System.out.print("Hey!");
+		}
+	}
+
+}

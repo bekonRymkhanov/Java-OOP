@@ -1,0 +1,6 @@
+package lab2;
+
+public class test {
+	Circle c=new Circle(5);
+	c.
+}

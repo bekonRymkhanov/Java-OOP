@@ -1,0 +1,52 @@
+package test;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.text.ParseException;
+
+import employee.*;
+import enums.*;
+import system.*;
+import student.*;
+import researcher.*;
+import interfaces.*;
+public class TestClass {
+	public static void main(String[] args) throws NumberFormatException, IOException, ParseException {
+		InputStreamReader isr=new InputStreamReader(System.in);
+		BufferedReader bReader=new BufferedReader(isr);
+		Admin admin=new Admin();
+		admin.seeAllUsers();
+		User user=null;
+		while(user==null) {
+	        DataBase database = DataBase.getInstance();
+	        
+			System.out.println("Enter login:");
+			String login=bReader.readLine();
+			
+			System.out.println("Enter Password:");
+			String password=bReader.readLine();
+			
+			user=database.checkPassword(login, password);
+
+		}
+        	if(user instanceof Admin){
+        		Admin newu=(Admin) user;
+        		newu.run();
+        	}else if(user instanceof Mananger){
+        		Mananger newu=(Mananger) user;
+        	}else if(user instanceof Teacher){
+        		Teacher newu=(Teacher) user;
+        		System.out.println(newu.toString());
+        	}else if(user instanceof Student){
+        		Student newu=(Student) user;
+        		System.out.println(newu.toString());
+        	}else if(user instanceof GraduateStudent){
+        		GraduateStudent newu=(GraduateStudent) user;
+        		System.out.println(newu.toString());
+        	}else if(user instab){
+        		SupportKBTU newu=(SupportKBTU) user;
+        		System.out.println(newu.toString());
+        	}
+       }
+
+}

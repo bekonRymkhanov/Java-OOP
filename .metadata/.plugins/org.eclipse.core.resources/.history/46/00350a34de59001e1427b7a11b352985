@@ -1,0 +1,23 @@
+package lab1;
+
+class Data11 {
+	private int maximum;
+	private double avarage;
+	private double value=0;
+	public Data11(){
+		
+	}
+	public void plus (int number) {
+		if(number>this.maximum) {
+			this.maximum=number;
+		}
+		this.value+=number;
+	}
+	public double avarage(int index) {
+		return this.value/index;
+	}
+	public double maximum() {
+		return this.maximum;
+	}
+	 
+}

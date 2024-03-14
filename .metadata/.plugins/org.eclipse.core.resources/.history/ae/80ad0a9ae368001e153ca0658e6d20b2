@@ -1,0 +1,28 @@
+package lab2;
+
+public class Circle extends Shapes{
+	protected int radius;
+	public Circle(String color,int r) {
+		Super()
+		radius=r;
+	}public Circle(int a){
+		radius=a;
+	}
+	public void draw() {
+//		for(int i = 0; i < this.radius; i++) {
+//			for(int j = 0; j < this.radius; j++) {
+//				if((1 <= i && i <= this.radius - 2) || (1 <= j && j <= this.radius - 2)) {
+//					System.out.print(this.a);
+//				}else System.out.print(' ');
+//			}
+//			System.out.println();
+//			
+//		}
+		System.err.print(());
+	}
+
+	void setlenthes(int lenth) {
+		radius=lenth;
+	}
+	
+}

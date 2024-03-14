@@ -1,0 +1,54 @@
+package lab2example3;
+
+public class Rock extends Piece {
+	public Rock(int x,int y) {
+		super("Rock",x,y);
+	}
+	boolean isLegalMove(int a, int b) {
+		if(a!=this.x && b!=this.y || (a>8 || b>8) || (a<1 || b<1) || (this.x==a && this.y==b)) return false;
+		if(a==this.x) {
+			if(b>this.y) {
+				for(int i=this.y+1;i<=b;i++) {
+					if(board[a][i].value==1 ||( board[a][i].value==2 && i!=b)) {
+						return false;
+					}
+				}
+			}else {
+				for(int i=b;i<this.y;i++) {
+					if(board[a][i].value==1 || (board[a][i].value==2 && i!=b)) {
+						return false;
+					}
+				}
+			}
+		}else {
+			if(a>this.x) {
+				for(int i=this.x+1;i<=a;i++) {
+					if(board[i][b].value==1) {
+						return false;
+					}
+				}
+			}else {
+				for(int i=a;i<this.x;i++) {
+					if(board[i][b].value==1) {
+						return false;
+					}
+				}
+			}
+		}
+		
+		return true;
+	}
+	void move(int a,int b) {
+		if(isLegalMove(a,b)) {
+			board[this.x][this.y].value=0;
+			board[a][b].value=1;
+			board[this.x][this.y].name="";
+			board[a][b].name="Rock";
+			this.x=a;
+			this.y=b;
+		}else {
+			System.out.print("Hey!");
+		}
+	}
+
+}

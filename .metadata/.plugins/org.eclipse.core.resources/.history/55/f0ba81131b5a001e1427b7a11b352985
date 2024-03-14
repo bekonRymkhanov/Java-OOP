@@ -1,0 +1,24 @@
+package lab1;
+
+import java.util.Scanner;
+
+import hell.Student;
+
+public class GradeBooktest {
+	public static void main(String[] args) {
+		Scanner scan=new Scanner(System.in);
+		Gradebook Gra=new Gradebook();
+		
+		
+		Gra.displayMessage();
+		String name=scan.next();
+		Student s=new Student("venn",66);
+		Student d=new Student("vnn",67);
+		Student f=new Student("vensdn",98);
+		Gra.getStudent(s);
+		Gra.getStudent(d);
+		Gra.getStudent(f);
+		System.out.print(Gra.toString());
+		
+	}
+}

@@ -1,0 +1,12 @@
+package lab2;
+
+public class test {
+
+	public static void main(String[] args) {
+		Circle c=new Circle("red",5);
+		c.draw();
+		Circle d=new Circle("wr",10);
+		d.draw();
+	}
+
+}
